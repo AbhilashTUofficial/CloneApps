@@ -46,7 +46,7 @@ class CallsPage extends StatelessWidget {
                       Container(
                           margin: EdgeInsets.only(right: 20),
                           child: Icon(
-                              callsList[index].callPlatform
+                              callsList[index].callPlatform == "Audio"
                                   ? Icons.call
                                   : Icons.videocam,
                               color: Theme.of(context).primaryColor))
