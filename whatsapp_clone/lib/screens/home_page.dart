@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/camera_page.dart';
+import 'package:whatsapp_clone/screens/chats_page.dart';
+import 'package:whatsapp_clone/screens/status_page.dart';
+
+import 'calls_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -54,6 +59,15 @@ class _HomePageState extends State<HomePage>
             Tab(text: "CALLS"),
           ],
         ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          CameraPage(),
+          ChatsPage(),
+          StatusPage(),
+          CallsPage(),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).accentColor,

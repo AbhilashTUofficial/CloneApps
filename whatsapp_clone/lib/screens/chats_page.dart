@@ -1,87 +1,65 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/widgets/nav_buttons.dart';
+import 'package:whatsapp_clone/data/Contacts.dart';
 
-class Chats extends StatefulWidget {
+import 'chat_screen.dart';
 
-
-  @override
-  _ChatsState createState() => _ChatsState();
-}
-
-class _ChatsState extends State<Chats> {
-  Widget _NavBuilder() {
-    return Row(
-      children: [
-        NavButtons("CHATS",1),
-        NavButtons("STATUS",2),
-        NavButtons("CALLS",3),
-      ],
-    );
-  }
+class ChatsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Text(
-          "WhatsApp",
-          style: TextStyle(letterSpacing: 1),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              size: 26,
-              color: Colors.white,
+    return Container(
+      child: ListView.builder(
+      itemCount: contactList.length,
+      itemBuilder: (context, int index) {
+        return GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => ChatScreen(userName: contactList[index]
+                  .name,userDp: contactList[index].imgUrl,),
             ),
-            onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(
-              Icons.more_vert,
-              size: 26,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: Column(
-        children: [
-          Container(
-              height: 53,
-              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.camera_alt,
-                          color: Colors.white70,
+          child: Container(
+            margin: EdgeInsets.symmetric(vertical: 2),
+            height: 80,
+            decoration: BoxDecoration(color: Colors.white),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    SizedBox(width: 15),
+                    CircleAvatar(
+                      backgroundImage:
+                          AssetImage(contactList[index].imgUrl),
+                      radius: 32,
+                    ),
+                    SizedBox(width: 10),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          contactList[index].name,
+                          style: TextStyle(fontSize: 16, letterSpacing: 1),
                         ),
-                        onPressed: () {},
-                      ),
-                      _NavBuilder(),
-                      SizedBox.shrink()
-                    ],
-                  ),
-                ],
-              )),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme.of(context).accentColor,
-        child: IconButton(
-          icon: Icon(
-            Icons.chat,
-            color: Colors.white,
+                        Text(
+                          contactList[index].message,
+                          style: TextStyle(color: Colors.black45),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 30, right: 15),
+                  child: Text(contactList[index].time,
+                      style: TextStyle(color: Colors.black54)),
+                )
+              ],
+            ),
           ),
-          onPressed: () {},
-        ),
-        onPressed: () {},
-      ),
+        );
+      }),
     );
   }
 }
