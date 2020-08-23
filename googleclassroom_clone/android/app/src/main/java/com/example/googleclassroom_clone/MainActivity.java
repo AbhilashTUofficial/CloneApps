@@ -1,4 +1,4 @@
-package com.example.googelclassroom_clone;
+package com.example.googleclassroom_clone;
 
 import io.flutter.embedding.android.FlutterActivity;
 

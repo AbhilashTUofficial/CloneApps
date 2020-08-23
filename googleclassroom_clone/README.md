@@ -1,6 +1,6 @@
-# googelclassroom_clone
+# googleclassroom_clone
 
-Clone on google's classroom.
+Clone of google classroom.
 
 ## Getting Started
 

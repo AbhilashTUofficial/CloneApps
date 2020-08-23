@@ -1,5 +1,5 @@
-name: googelclassroom_clone
-description: Clone on google's classroom.
+name: googleclassroom_clone
+description: Clone of google classroom.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.

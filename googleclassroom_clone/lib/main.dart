@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:googelclassroom_clone/screens/home_page.dart';
+import 'package:googleclassroom_clone/screens/home_page.dart';
 void main()=>runApp(GoogleClassroomClone());
 
 class GoogleClassroomClone extends StatefulWidget {
