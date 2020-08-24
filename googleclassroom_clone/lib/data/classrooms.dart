@@ -67,6 +67,8 @@ List<ClassRooms> classRoomList = [
       creator: "violin",
       bannerImg: AssetImage("Assets/Images/banner8.jpg"),
       uiColor: Color.fromARGB(255, 95, 139, 233)),
+
+
   ClassRooms(
       className: "Bsc.cs Data structure ",
       description: "second year",
@@ -91,4 +93,5 @@ List<ClassRooms> classRoomList = [
       creator: "Archana",
       bannerImg: AssetImage("Assets/Images/banner12.jpg"),
       uiColor: Colors.blueGrey),
+
 ];

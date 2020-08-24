@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:googleclassroom_clone/data/classrooms.dart';
 
+import 'class_room_page.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -12,7 +14,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           elevation: 0.5,
-          leading: IconButton(icon: Icon(Icons.menu, color: Colors.black)),
+          leading: Icon(Icons.menu, color: Colors.black87),
           title: Text(
             "Google Classroom",
             style: TextStyle(
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
             IconButton(
               icon: Icon(
                 Icons.add,
-                color: Colors.black54,
+                color: Colors.black87,
                 size: 30,
               ),
               onPressed: () {},
@@ -31,7 +33,7 @@ class _HomePageState extends State<HomePage> {
             IconButton(
               icon: Icon(
                 Icons.more_vert,
-                color: Colors.black54,
+                color: Colors.black87,
                 size: 30,
               ),
               onPressed: () {},
@@ -41,7 +43,12 @@ class _HomePageState extends State<HomePage> {
         body: ListView.builder(
             itemCount: classRoomList.length,
             itemBuilder: (context, int index) {
-              return Container(
+              return GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => ClassRoomPage(
+                          className: classRoomList[index].className,
+                          bannerImg: classRoomList[index].bannerImg,
+                        ))),
                 child: Stack(
                   children: [
                     Container(
@@ -62,9 +69,11 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         classRoomList[index].className,
                         style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            letterSpacing: 1,),overflow: TextOverflow.ellipsis,
+                          fontSize: 20,
+                          color: Colors.white,
+                          letterSpacing: 1,
+                        ),
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     Container(
