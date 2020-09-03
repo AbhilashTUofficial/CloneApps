@@ -71,12 +71,22 @@ class _ClassRoomPageState extends State<ClassRoomPage> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(5),
                   boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 3)]),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage('Assets/Images/banner12.jpg'),
-                ),
-                title: Text("dfsd"),
-              )),
+              child: Row(
+                children: [
+                  SizedBox(width: 10),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('Assets/Images/banner12.jpg'),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    "Share with your class...",
+                    style: TextStyle(color: Colors.grey),
+                  )
+                ],
+              )),Container(
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),
+                border:Border.all(style: )),
+          )
         ],
       ),
     );
