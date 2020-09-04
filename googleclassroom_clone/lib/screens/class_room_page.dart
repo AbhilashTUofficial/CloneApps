@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:googleclassroom_clone/widgets/comment_composer.dart';
 
 class ClassRoomPage extends StatefulWidget {
   AssetImage bannerImg;
@@ -83,10 +84,7 @@ class _ClassRoomPageState extends State<ClassRoomPage> {
                     style: TextStyle(color: Colors.grey),
                   )
                 ],
-              )),Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),
-                border:Border.all(style: )),
-          )
+              )),CommentComposer(),
         ],
       ),
     );
