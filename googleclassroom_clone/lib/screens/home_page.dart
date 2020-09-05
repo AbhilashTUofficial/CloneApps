@@ -46,6 +46,7 @@ class _HomePageState extends State<HomePage> {
               return GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (_) => ClassRoomPage(
+                          uiColor: classRoomList[index].uiColor,
                           className: classRoomList[index].className,
                           bannerImg: classRoomList[index].bannerImg,
                         ))),

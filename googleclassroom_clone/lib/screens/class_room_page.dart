@@ -1,19 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:googleclassroom_clone/widgets/comment_composer.dart';
+import 'package:googleclassroom_clone/screens/classroom/people_tab.dart';
+
+import 'classroom/classwork_tab.dart';
+import 'classroom/stream_tab.dart';
 
 class ClassRoomPage extends StatefulWidget {
   AssetImage bannerImg;
   String className;
+  Color uiColor;
 
-  ClassRoomPage({this.className, this.bannerImg});
+  ClassRoomPage({this.className, this.bannerImg, this.uiColor});
 
   @override
   _ClassRoomPageState createState() => _ClassRoomPageState();
 }
 
 class _ClassRoomPageState extends State<ClassRoomPage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    String className = widget.className;
+    AssetImage bannerImg = widget.bannerImg;
+    final tabs = [
+      StreamTab(
+        bannerImg: bannerImg,
+        className: className,
+      ),
+      ClassWork(),
+      PeopleTab()
+    ];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -40,52 +62,28 @@ class _ClassRoomPageState extends State<ClassRoomPage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Container(
-            height: 120,
-            child: Stack(
-              children: [
-                Container(
-                  margin: EdgeInsets.all(10),
-                  child: Image(
-                    image: widget.bannerImg,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Container(
-                  width: 200,
-                  alignment: Alignment.bottomLeft,
-                  margin: EdgeInsets.only(bottom: 40, left: 30),
-                  child: Text(
-                    widget.className,
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                )
-              ],
+      body: tabs[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            title: Text('Stream'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            title: Text('Classwork'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            title: Text(
+              'People',
+              style: TextStyle(),
             ),
           ),
-          Container(
-              margin: EdgeInsets.symmetric(horizontal: 15),
-              height: 60,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 3)]),
-              child: Row(
-                children: [
-                  SizedBox(width: 10),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('Assets/Images/banner12.jpg'),
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    "Share with your class...",
-                    style: TextStyle(color: Colors.grey),
-                  )
-                ],
-              )),CommentComposer(),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.redAccent,
+        onTap: _onItemTapped,
       ),
     );
   }
