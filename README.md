@@ -8,9 +8,10 @@ Cloning an existing application is the best way to learn anything. So I learn fl
 
 |Screen 1|Screen 2|Screen 3|
 |---|---|---|
-|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/GoogleClassroom1.png">|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/GoogleClassroom2.png">|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/GoogleClassroom3.png">|
-|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/Instagram1.png">|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/Instagram2.png">|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/Instagram3.png">|
-|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/WhatsApp1.png">|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/WhatsApp2.png">|<img align="left" alt="BlockCrush Game" width="200px" src="./Img/WhatsApp3.png">|
+|<img align="left" alt="google classroom" width="200px" src="./Img/GoogleClassroom1.png">|<img align="left" alt="google classroom" width="200px" src="./Img/GoogleClassroom2.png">|<img align="left" alt="google classroom" width="200px" src="./Img/GoogleClassroom3.png">|
+|<img align="left" alt="instagram" width="200px" src="./Img/Instagram1.png">|<img align="left" alt="instagram" width="200px" src="./Img/Instagram2.png">|<img align="left" alt="instagram" width="200px" src="./Img/Instagram3.png">|
+|<img align="left" alt="whatsapp" width="200px" src="./Img/WhatsApp1.png">|<img align="left" alt="whatsapp" width="200px" src="./Img/WhatsApp2.png">|<img align="left" alt="whatsapp" width="200px" src="./Img/WhatsApp3.png">|
+|<img align="left" alt="tinder" width="200px" src="./Img/tinderClone1.png">|<img align="left" alt="Tinder" width="200px" src="./Img/tinderClone2.png">|
 <br/>
 
 ### Languages & tools :
@@ -42,12 +43,8 @@ Cloning an existing application is the best way to learn anything. So I learn fl
     |    |-- WhatsApp2.png
     |    |-- WhatsApp3.png
     |    |-- WhatsApp4.png
-    |
-    |-- googleclassroom_clone
-    |
-    |-- whatsapp_clone
-    |
-    |-- youtube_clone
+    |    |-- tinderClone1.png
+    |    |-- tinderClone2.png
     |
     |-- README.md
 
