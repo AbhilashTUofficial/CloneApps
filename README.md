@@ -4,6 +4,7 @@ Cloning an existing application is the best way to learn anything. So I learn fl
 [ Instragram ](https://github.com/AbhilashTUofficial/Instagram-Clone-Flutter)\
 [ Google ClassRoom ](https://github.com/AbhilashTUofficial/GoogleClassRoom-Clone-Flutter)\
 [ WhatsApp ](https://github.com/AbhilashTUofficial/WhatsApp-Clone-Flutter)
+[ Tinder ](https://github.com/AbhilashTUofficial/Tinder-Clone-Flutter)
 <br/>
 
 |Screen 1|Screen 2|Screen 3|
